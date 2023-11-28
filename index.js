@@ -3,20 +3,15 @@ import cors from "cors";
 
 const app = express();
 
-app.use(cors({ origin: "http://localhost:4200" }));
-
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   res.setHeader(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   res.setHeader(
-//     "Access-Control-Allow-Methods",
-//     "GET, POST, PATCH, DELETE, OPTIONS"
-//   );
-//   next();
-// });
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3200",
+      "http://localhost:4200",
+      "http://localhost:5200",
+    ],
+  })
+);
 
 app.use("/api/login", (req, res, next) => {
   //   res.send("hello from index.js");
@@ -24,11 +19,11 @@ app.use("/api/login", (req, res, next) => {
   const users = [
     {
       username: "Silviu",
-      password: "123456",
+      token: "123456",
     },
     {
       username: "Diogo",
-      password: "010101",
+      token: "010101",
     },
   ];
   return res.status(200).json({
