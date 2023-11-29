@@ -21,10 +21,10 @@ app.use("/api/login", (req, res, next) => {
       username: "Silviu",
       token: "123456",
     },
-    {
-      username: "Diogo",
-      token: "010101",
-    },
+    // {
+    //   username: "Diogo",
+    //   token: "010101",
+    // },
   ];
   return res.status(200).json({
     message: "User fetched succesfully!",
