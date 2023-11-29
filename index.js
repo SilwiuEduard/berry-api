@@ -19,7 +19,7 @@ app.use("/api/login", (req, res, next) => {
   const users = [
     {
       username: "Silviu",
-      token: "123456",
+      password: "123456",
     },
     // {
     //   username: "Diogo",
